@@ -1,8 +1,10 @@
-package fr.jaipasid.remiseenforme;
+package fr.jaipasid.remiseenforme.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import fr.jaipasid.remiseenforme.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -31,9 +31,14 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.annotation.jvm)
+    val room_version = "2.5.0"
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation(libs.androidx.room.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
