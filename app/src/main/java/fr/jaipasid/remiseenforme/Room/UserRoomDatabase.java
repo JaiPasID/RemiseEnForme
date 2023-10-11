@@ -1,17 +1,16 @@
 package fr.jaipasid.remiseenforme.Room;
 
 
-import android.app.Activity;
-
 import androidx.annotation.NonNull;
 import androidx.room.Database;
 
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.processor.Context;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.Executors;
+
+import fr.jaipasid.remiseenforme.Activity.CreateProfile;
 
 
 @Database(entities = (UserEntity.class), version = 1, exportSchema = false)
@@ -19,13 +18,12 @@ public abstract class UserRoomDatabase extends RoomDatabase {
     private static final String DB_Name = "DataRoom";
     private static UserRoomDatabase instance;
 
-   //TODO Comprendre l'orgine du probleme
-    public static synchronized UserRoomDatabase getInstance(Context pContext){
+    public static synchronized UserRoomDatabase getInstance(CreateProfile pContext){
         if(instance == null){
- //           instance = Room.databaseBuilder(pContext.getApplicationContext(), UserRoomDatabase.class, DB_Name)
- //                   .fallbackToDestruct iveMigration()
- //                   .addCallback(roomCallback)
- //                   .build();
+            instance = Room.databaseBuilder(pContext.getApplicationContext(), UserRoomDatabase.class, DB_Name)
+                    .fallbackToDestructiveMigration()
+                    .addCallback(roomCallback)
+                    .build();
         }
         return instance;
     }

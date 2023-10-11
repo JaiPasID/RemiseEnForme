@@ -3,7 +3,6 @@ package fr.jaipasid.remiseenforme.ViewModel;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.room.processor.Context;
 
 import fr.jaipasid.remiseenforme.Activity.CreateProfile;
 import fr.jaipasid.remiseenforme.Repository.UserRepository;
@@ -24,7 +23,7 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         return sViewModelFactory;
     }
 
-    public ViewModelFactory(Context pContext) {
+    public ViewModelFactory(CreateProfile pContext) {
         UserRoomDatabase lvDatabaseRoom =UserRoomDatabase.getInstance(pContext);
         pUserRepository = new UserRepository(lvDatabaseRoom.mUserDAO());
 
