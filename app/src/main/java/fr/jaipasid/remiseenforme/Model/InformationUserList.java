@@ -1,4 +1,4 @@
-package fr.jaipasid.remiseenforme.Class;
+package fr.jaipasid.remiseenforme.Model;
 
 public class InformationUserList {
 

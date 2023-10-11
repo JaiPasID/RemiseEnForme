@@ -5,10 +5,6 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import org.jetbrains.annotations.NotNull;
-
-import fr.jaipasid.remiseenforme.Class.InformationUserList;
-
 @Entity (tableName = "data_user")
 public class UserEntity {
 
