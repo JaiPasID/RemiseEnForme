@@ -12,7 +12,7 @@ public class InformationUserList {
      * @param name
      * @param age
      * @param photoProfile
-     */
+     */ 
     public InformationUserList(String name, int age, String photoProfile) {
         this.name = name;
         this.age = age;

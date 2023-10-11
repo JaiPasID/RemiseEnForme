@@ -13,6 +13,12 @@
         android:theme="@style/Theme.RemiseEnForme"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.SeeProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CreateProfile"
+            android:exported="false" />
+        <activity
             android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>

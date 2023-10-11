@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.room.processor.Context;
 
+import fr.jaipasid.remiseenforme.Activity.CreateProfile;
 import fr.jaipasid.remiseenforme.Repository.UserRepository;
 import fr.jaipasid.remiseenforme.Room.UserRoomDatabase;
 
@@ -14,7 +15,7 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
     private UserRepository pUserRepository;
 
 
-    public static ViewModelFactory getInstance(Context pContext){
+    public static ViewModelFactory getInstance(CreateProfile pContext){
         if  (sViewModelFactory == null) {
             synchronized (ViewModelFactory.class){
                 sViewModelFactory = new ViewModelFactory(pContext);

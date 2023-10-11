@@ -23,7 +23,7 @@ public abstract class UserRoomDatabase extends RoomDatabase {
     public static synchronized UserRoomDatabase getInstance(Context pContext){
         if(instance == null){
  //           instance = Room.databaseBuilder(pContext.getApplicationContext(), UserRoomDatabase.class, DB_Name)
- //                   .fallbackToDestructiveMigration()
+ //                   .fallbackToDestruct iveMigration()
  //                   .addCallback(roomCallback)
  //                   .build();
         }
@@ -31,7 +31,7 @@ public abstract class UserRoomDatabase extends RoomDatabase {
     }
 
     public abstract UserDAO mUserDAO();
-
+ 
     private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback(){
 
         /**
