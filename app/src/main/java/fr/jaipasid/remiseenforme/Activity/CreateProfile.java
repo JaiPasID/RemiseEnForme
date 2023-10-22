@@ -45,7 +45,11 @@ public class CreateProfile extends AppCompatActivity {
         photoProfile = findViewById(R.id.photoProfile);
         save = findViewById(R.id.saveInformation);
 
+
+        // Pour creer une instance de viewModel
         mViewModelUser =new ViewModelProvider(this, ViewModelFactory.getInstance(CreateProfile.this)).get(ViewModelUser.class);
+
+
         mViewModelUser.getListLiveData().observe(this, new Observer<List<UserEntity>>() {
             @Override
             public void onChanged(List<UserEntity> pUserEntities) {
@@ -58,9 +62,7 @@ public class CreateProfile extends AppCompatActivity {
             @Override
             public void onClick(View pView) {
                 onPositiveButtonClick();
-                Intent lvIntent = new Intent(CreateProfile.this, MainActivity.class);
-                startActivity(lvIntent);
-
+                finish();
             }
         });
     }

@@ -10,6 +10,8 @@ import fr.jaipasid.remiseenforme.Room.UserEntity;
 public class UserRepository {
     private UserDAO mUserDAO;
 
+
+    // injection des dependances
     public UserRepository(UserDAO pUserDAO) {
         mUserDAO = pUserDAO;
     }

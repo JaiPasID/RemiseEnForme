@@ -1,5 +1,7 @@
 package fr.jaipasid.remiseenforme.ViewModel;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
@@ -14,7 +16,7 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
     private UserRepository pUserRepository;
 
 
-    public static ViewModelFactory getInstance(CreateProfile pContext){
+    public static ViewModelFactory getInstance(Context pContext){
         if  (sViewModelFactory == null) {
             synchronized (ViewModelFactory.class){
                 sViewModelFactory = new ViewModelFactory(pContext);
@@ -23,7 +25,7 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         return sViewModelFactory;
     }
 
-    public ViewModelFactory(CreateProfile pContext) {
+    public ViewModelFactory(Context pContext) {
         UserRoomDatabase lvDatabaseRoom =UserRoomDatabase.getInstance(pContext);
         pUserRepository = new UserRepository(lvDatabaseRoom.mUserDAO());
 

@@ -20,10 +20,11 @@ public interface UserDAO {
     @Update
     void updateUser(UserEntity pUserEntity);
 
+
+    //On peut faire un delete par id
     @Delete
     void deleteUser (UserEntity pUserEntity);
-    @Query("SELECT * FROM data_user")
-    List<UserEntity> getAll();
+
 
     @Query("DELETE FROM data_user")
     void deleteAll();

@@ -1,6 +1,8 @@
 package fr.jaipasid.remiseenforme.Room;
 
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.room.Database;
 
@@ -18,10 +20,11 @@ public abstract class UserRoomDatabase extends RoomDatabase {
     private static final String DB_Name = "DataRoom";
     private static UserRoomDatabase instance;
 
-    public static synchronized UserRoomDatabase getInstance(CreateProfile pContext){
+    public static synchronized UserRoomDatabase getInstance(Context pContext){
         if(instance == null){
             instance = Room.databaseBuilder(pContext.getApplicationContext(), UserRoomDatabase.class, DB_Name)
                     .fallbackToDestructiveMigration()
+                    //ne sert que dans le cas de test addCallback
                     .addCallback(roomCallback)
                     .build();
         }
@@ -29,7 +32,9 @@ public abstract class UserRoomDatabase extends RoomDatabase {
     }
 
     public abstract UserDAO mUserDAO();
- 
+
+
+    //No Obligatoire seulement pour test
     private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback(){
 
         /**

@@ -31,5 +31,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        seeProfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SeeProfile.class);
+                startActivity(intent);
+            }
+        });
     }
 }
